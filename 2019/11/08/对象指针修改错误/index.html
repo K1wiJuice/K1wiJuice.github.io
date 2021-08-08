@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
+<head>
+    <meta charset="utf-8" />
 
     
 
@@ -10,49 +10,63 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="" />
     
     <meta name="description" content="好久没更新了，啥也没写的几个月主要在忙学院足球队的事，发生了很多事情，我自己也受伤了。不过我最近还是很快乐——因为我发现写编译原理实验很有意思。有一说一，编译原理真的很有意思，建议所有计软方向的同学都来学习（滑稽）。快到编译原理实验截止日期了，于是最近这两天在写实验，实验的内容是写一个PL(0)文法的编译器，好像扯远了… 这次的主题是记录我在编写c++程序时一个致命错误，首先上省略后的伪代码。 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++对象指针修改错误">
-<meta property="og:url" content="http://sduzhang.cn/2019/11/08/对象指针修改错误/index.html">
+<meta property="og:url" content="http://sduzhang.cn/2019/11/08/%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88%E4%BF%AE%E6%94%B9%E9%94%99%E8%AF%AF/index.html">
 <meta property="og:site_name" content="Zyh&#39;s site">
 <meta property="og:description" content="好久没更新了，啥也没写的几个月主要在忙学院足球队的事，发生了很多事情，我自己也受伤了。不过我最近还是很快乐——因为我发现写编译原理实验很有意思。有一说一，编译原理真的很有意思，建议所有计软方向的同学都来学习（滑稽）。快到编译原理实验截止日期了，于是最近这两天在写实验，实验的内容是写一个PL(0)文法的编译器，好像扯远了… 这次的主题是记录我在编写c++程序时一个致命错误，首先上省略后的伪代码。 1">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-03T04:17:11.267Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-08T13:36:40.000Z">
+<meta property="article:modified_time" content="2021-08-08T07:01:10.597Z">
+<meta property="article:author" content="Zyh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c++对象指针修改错误">
-<meta name="twitter:description" content="好久没更新了，啥也没写的几个月主要在忙学院足球队的事，发生了很多事情，我自己也受伤了。不过我最近还是很快乐——因为我发现写编译原理实验很有意思。有一说一，编译原理真的很有意思，建议所有计软方向的同学都来学习（滑稽）。快到编译原理实验截止日期了，于是最近这两天在写实验，实验的内容是写一个PL(0)文法的编译器，好像扯远了… 这次的主题是记录我在编写c++程序时一个致命错误，首先上省略后的伪代码。 1">
     
 
     
-        <link rel="alternate" href="/atom.xml" title="Zyh&#39;s site" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="Zyh&#39;s site" type="application/atom+xml" />
     
 
     
-        <link rel="icon" href="/css/images/favicon.ico">
+        <link rel="icon" href="/css/images/favicon.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -64,10 +78,6 @@
                         <a href="/" class="logo"></a>
                     </h1>
                     
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">这里是Zyh的博客</p>
-                        </h2>
-                    
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
@@ -78,7 +88,7 @@
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/工具包/">工具包</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/论文学习/">论文学习</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%BD%92%E6%A1%A3/">归档</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于</a>
@@ -120,7 +130,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -137,7 +149,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/工具包/">工具包</a>
+    <a class="page-title-link" href="/categories/%E5%BD%92%E6%A1%A3/">归档</a>
     </h1>
 </div>
 
@@ -159,7 +171,7 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/11/08/对象指针修改错误/" class="article-date">
+        <a href="/2019/11/08/%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88%E4%BF%AE%E6%94%B9%E9%94%99%E8%AF%AF/" class="article-date">
             <time datetime="2019-11-08T13:36:40.000Z" itemprop="datePublished">2019-11-08</time>
         </a>
     </div>
@@ -173,7 +185,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>好久没更新了，啥也没写的几个月主要在忙学院足球队的事，发生了很多事情，我自己也受伤了。不过我最近还是很快乐——因为我发现写编译原理实验很有意思。有一说一，编译原理真的很有意思，建议所有计软方向的同学都来学习（滑稽）。快到编译原理实验截止日期了，于是最近这两天在写实验，实验的内容是写一个PL(0)文法的编译器，好像扯远了…</p>
 <p>这次的主题是记录我在编写c++程序时一个致命错误，首先上省略后的伪代码。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">production *p[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">queue</span>.in(p[<span class="number">0</span>]);<span class="comment">//p[0]入队列</span></span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">queue</span>.empty()) &#123;</span><br><span class="line">    production *p1 = <span class="built_in">queue</span>.out();<span class="comment">//队列头出队列，第一次进入while循环时出队列的是p[0]</span></span><br><span class="line">    change(p1);<span class="comment">//对p1指向的对象进行修改</span></span><br><span class="line">    <span class="keyword">if</span>(p1 in p) <span class="built_in">queue</span>.in(p1);<span class="comment">//如果p1是p中的元素，p1入队列</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">production *p[<span class="number">10</span>];</span><br><span class="line">queue.<span class="built_in">in</span>(p[<span class="number">0</span>]);<span class="comment">//p[0]入队列</span></span><br><span class="line"><span class="keyword">while</span> (!queue.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">    production *p1 = queue.<span class="built_in">out</span>();<span class="comment">//队列头出队列，第一次进入while循环时出队列的是p[0]</span></span><br><span class="line">    <span class="built_in">change</span>(p1);<span class="comment">//对p1指向的对象进行修改</span></span><br><span class="line">    <span class="keyword">if</span>(p1 in p) queue.<span class="built_in">in</span>(p1);<span class="comment">//如果p1是p中的元素，p1入队列</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>emmm这么省略后再看觉得自己能犯这样的错误简直太傻了。由于我以为修改了p1，实际上p1和p中某一个元素指向的是同一个对象，所以总有p1 in p，循环是个死循环。所以说当使用指针的时候一定要注意，如果你的语义需要修改指针指向的对象，一定要搞清楚指针和哪些标识符指向同一个对象，保险起见在修改时应该创建一个新的对象（除非就是要修改这个对象），使用指针的时候一定要注意！！！</p>
 <p>否则下一次就是你要面对着几百行代码和有限的输出内容debug了（笑）。</p>
@@ -184,7 +196,7 @@
 
 
 
-    <a data-url="http://sduzhang.cn/2019/11/08/对象指针修改错误/" data-id="ck7099ylu000b4kig963gul48" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://sduzhang.cn/2019/11/08/%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88%E4%BF%AE%E6%94%B9%E9%94%99%E8%AF%AF/" data-id="cks2vntyc000a78vj0r1jhnjz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -257,15 +269,15 @@
         "headline": "c++对象指针修改错误",
         "image": "http://sduzhang.cn",
         "keywords": "",
-        "genre": "工具包",
+        "genre": "归档",
         "datePublished": "2019-11-08",
         "dateCreated": "2019-11-08",
-        "dateModified": "2019-12-03",
+        "dateModified": "2021-08-08",
         "url": "http://sduzhang.cn/2019/11/08/对象指针修改错误/",
         "description": "好久没更新了，啥也没写的几个月主要在忙学院足球队的事，发生了很多事情，我自己也受伤了。不过我最近还是很快乐——因为我发现写编译原理实验很有意思。有一说一，编译原理真的很有意思，建议所有计软方向的同学都来学习（滑稽）。快到编译原理实验截止日期了，于是最近这两天在写实验，实验的内容是写一个PL(0)文法的编译器，好像扯远了…
 这次的主题是记录我在编写c++程序时一个致命错误，首先上省略后的伪代码。
 1"
-        "wordCount": 54
+        "wordCount": 55
     }
 </script>
 
@@ -275,7 +287,7 @@
     
         
     <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 
     
@@ -313,7 +325,7 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/12/03/ubuntu修改登录壁纸/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/12/03/ubuntu%E4%BF%AE%E6%94%B9%E7%99%BB%E5%BD%95%E5%A3%81%E7%BA%B8/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
@@ -324,9 +336,9 @@
     </a>
     
     
-        <a href="/2019/09/04/常用网站/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/08/05/cachelinecnt-timing-attack/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">常用网站</p>
+        <p class="article-nav-title">一种对GPU上AES加密的时序攻击</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -358,45 +370,45 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/12/03/ubuntu修改登录壁纸/" class="title">ubuntu修改登录界面壁纸</a></p>
-                            <p class="item-date"><time datetime="2019-12-03T04:02:52.000Z" itemprop="datePublished">2019-12-03</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/08/08/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92/" class="title">个人计划</a></p>
+                            <p class="item-date"><time datetime="2021-08-08T07:02:11.000Z" itemprop="datePublished">2021-08-08</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/11/08/对象指针修改错误/" class="title">c++对象指针修改错误</a></p>
-                            <p class="item-date"><time datetime="2019-11-08T13:36:40.000Z" itemprop="datePublished">2019-11-08</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/08/08/%E5%86%99%E5%9C%A8%E6%9C%80%E5%BC%80%E5%A7%8B/" class="title">写在最开始</a></p>
+                            <p class="item-date"><time datetime="2021-08-08T06:47:35.000Z" itemprop="datePublished">2021-08-08</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/09/04/常用网站/" class="title">常用网站</a></p>
-                            <p class="item-date"><time datetime="2019-09-04T14:41:10.000Z" itemprop="datePublished">2019-09-04</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/02/28/%E6%97%A5%E8%AE%B0%202021-02-28/" class="title">日记 2021-02-28</a></p>
+                            <p class="item-date"><time datetime="2021-02-28T13:05:22.000Z" itemprop="datePublished">2021-02-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/论文学习/">论文学习</a></p>
-                            <p class="item-title"><a href="/2019/08/05/cachelinecnt-timing-attack/" class="title">一种对GPU上AES加密的时序攻击</a></p>
-                            <p class="item-date"><time datetime="2019-08-05T10:57:47.000Z" itemprop="datePublished">2019-08-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/02/13/%E6%97%A5%E8%AE%B0%202021-02-13/" class="title">日记 2021-02-13</a></p>
+                            <p class="item-date"><time datetime="2021-02-13T06:51:35.000Z" itemprop="datePublished">2021-02-13</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/07/27/Error-Permission-denied-publickey/" class="title">Error: Permission denied (publickey)</a></p>
-                            <p class="item-date"><time datetime="2019-07-27T03:08:21.000Z" itemprop="datePublished">2019-07-27</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2020/04/27/%E9%A3%9E%E5%90%91%E6%9C%AD%E5%B9%8C%E7%9A%84%E7%8F%AD%E6%9C%BA/" class="title">飞向札幌的班机</a></p>
+                            <p class="item-date"><time datetime="2020-04-27T10:32:11.000Z" itemprop="datePublished">2020-04-27</time></p>
                         </div>
                     </li>
                 
@@ -409,7 +421,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具包/">工具包</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文学习/">论文学习</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%92%E6%A1%A3/">归档</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -419,7 +431,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -438,11 +450,11 @@
             <ul>
                 
                     <li>
-                        <a href="http://47.100.170.79:8199/dd_blog/">佟老师的博客</a>
+                        <a target="_blank" rel="noopener" href="http://47.100.170.79:8199/dd_blog/">佟老师的博客</a>
                     </li>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
                     </li>
                 
             </ul>
@@ -466,7 +478,7 @@
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2020 Zyh</p>
+                <p>&copy; 2021 Zyh</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
             <div class="footer-plugins">
@@ -485,7 +497,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://sduzhang.cn/2019/11/08/对象指针修改错误/';
+    var disqus_url = 'http://sduzhang.cn/2019/11/08/%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88%E4%BF%AE%E6%94%B9%E9%94%99%E8%AF%AF/';
     
     (function() {
     var dsq = document.createElement('script');
@@ -500,25 +512,47 @@
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div>
 </body>

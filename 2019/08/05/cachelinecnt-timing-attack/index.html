@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
+<head>
+    <meta charset="utf-8" />
 
     
 
@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content>
+        <meta name="keywords" content="" />
     
     <meta name="description" content="最近几天读了论文  A Complete Key Recovery Timing Attack on a GPU(2016 HPCA)，然后打算和学长一起复现一下这篇论文提出的攻击方法。 论文源地址 论文针对GPU上的AES实现，提出了一种攻击方式。 首先，他们的motivation是下图中加密时间和程序Cache Line请求数之间对应的线性关系。   攻击过程如下：（1）获得设备加密的大量的A">
 <meta property="og:type" content="article">
@@ -18,43 +18,57 @@
 <meta property="og:url" content="http://sduzhang.cn/2019/08/05/cachelinecnt-timing-attack/index.html">
 <meta property="og:site_name" content="Zyh&#39;s site">
 <meta property="og:description" content="最近几天读了论文  A Complete Key Recovery Timing Attack on a GPU(2016 HPCA)，然后打算和学长一起复现一下这篇论文提出的攻击方法。 论文源地址 论文针对GPU上的AES实现，提出了一种攻击方式。 首先，他们的motivation是下图中加密时间和程序Cache Line请求数之间对应的线性关系。   攻击过程如下：（1）获得设备加密的大量的A">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://sduzhang.cn/images/cachelinecnt_motivation.png">
-<meta property="og:updated_time" content="2019-11-08T14:03:29.534Z">
+<meta property="article:published_time" content="2019-08-05T10:57:47.000Z">
+<meta property="article:modified_time" content="2021-08-08T06:59:12.403Z">
+<meta property="article:author" content="Zyh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一种对GPU上AES加密的时序攻击">
-<meta name="twitter:description" content="最近几天读了论文  A Complete Key Recovery Timing Attack on a GPU(2016 HPCA)，然后打算和学长一起复现一下这篇论文提出的攻击方法。 论文源地址 论文针对GPU上的AES实现，提出了一种攻击方式。 首先，他们的motivation是下图中加密时间和程序Cache Line请求数之间对应的线性关系。   攻击过程如下：（1）获得设备加密的大量的A">
 <meta name="twitter:image" content="http://sduzhang.cn/images/cachelinecnt_motivation.png">
     
 
     
-        <link rel="alternate" href="/atom.xml" title="Zyh&#39;s site" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="Zyh&#39;s site" type="application/atom+xml" />
     
 
     
-        <link rel="icon" href="/css/images/favicon.ico">
+        <link rel="icon" href="/css/images/favicon.ico" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -66,10 +80,6 @@
                         <a href="/" class="logo"></a>
                     </h1>
                     
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">这里是Zyh的博客</p>
-                        </h2>
-                    
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
@@ -80,7 +90,7 @@
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/工具包/">工具包</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/论文学习/">论文学习</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%BD%92%E6%A1%A3/">归档</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于</a>
@@ -122,7 +132,9 @@
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
 
 </div>
                         </nav>
@@ -139,7 +151,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/论文学习/">论文学习</a>
+    <a class="page-title-link" href="/categories/%E5%BD%92%E6%A1%A3/">归档</a>
     </h1>
 </div>
 
@@ -174,7 +186,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <p>最近几天读了论文  A Complete Key Recovery Timing Attack on a GPU(2016 HPCA)，然后打算和学长一起复现一下这篇论文提出的攻击方法。</p>
-<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7446081" target="_blank" rel="noopener">论文源地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7446081">论文源地址</a></p>
 <p>论文针对GPU上的AES实现，提出了一种攻击方式。</p>
 <p>首先，他们的motivation是下图中加密时间和程序Cache Line请求数之间对应的线性关系。</p>
 <img src="/images/cachelinecnt_motivation.png" width="350px" height="350px">
@@ -188,12 +200,12 @@
 
 <h4 id="复现代码："><a href="#复现代码：" class="headerlink" title="复现代码："></a>复现代码：</h4><p>首先是将文件中的密文读入，并处理成二维数组，方便后续处理。</p>
 <p>由于密文数据是将一个字节拆成两个十六进制的数字，并且转成按照对应值的字符而不是对应二进制分别存入两个字节（如密文0x4c，拆成4、c并转换成字符<code>&#39;4&#39;</code>和<code>&#39;c&#39;</code>分别存储），所以这一步略显麻烦。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// init the matrix cipher[][]</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preCipher</span><span class="params">(<span class="keyword">char</span> *path)</span> </span>&#123;</span><br><span class="line">    FILE *fp = fopen(path, <span class="string">"r"</span>);</span><br><span class="line">    <span class="keyword">char</span> line[<span class="number">49</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; blockNum; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">fscanf</span>(fp, <span class="string">"%s"</span>, line);</span><br><span class="line">            <span class="keyword">uint8_t</span> a,b;</span><br><span class="line">            <span class="keyword">if</span> (line[<span class="number">0</span>] &gt;= <span class="string">'a'</span> &amp;&amp; line[<span class="number">0</span>] &lt;= <span class="string">'f'</span>) a = line[<span class="number">0</span>] - <span class="string">'a'</span> + <span class="number">9</span>;</span><br><span class="line">            <span class="keyword">else</span> a = line[<span class="number">0</span>] - <span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span> (line[<span class="number">1</span>] &gt;= <span class="string">'a'</span> &amp;&amp; line[<span class="number">1</span>] &lt;= <span class="string">'f'</span>) b = line[<span class="number">0</span>] - <span class="string">'a'</span> + <span class="number">9</span>;</span><br><span class="line">            <span class="keyword">else</span> b = line[<span class="number">1</span>] - <span class="string">'0'</span>;</span><br><span class="line">            a &amp;= <span class="number">0b00001111</span>;</span><br><span class="line">            b &amp;= <span class="number">0b00001111</span>;</span><br><span class="line">            a = a &lt;&lt; <span class="number">4</span>;</span><br><span class="line">            cipher[i][j] = a ^ b;</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// init the matrix cipher[][]</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preCipher</span><span class="params">(<span class="keyword">char</span> *path)</span> </span>&#123;</span><br><span class="line">    FILE *fp = fopen(path, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">    <span class="keyword">char</span> line[<span class="number">49</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; blockNum; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">fscanf</span>(fp, <span class="string">&quot;%s&quot;</span>, line);</span><br><span class="line">            <span class="keyword">uint8_t</span> a,b;</span><br><span class="line">            <span class="keyword">if</span> (line[<span class="number">0</span>] &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; line[<span class="number">0</span>] &lt;= <span class="string">&#x27;f&#x27;</span>) a = line[<span class="number">0</span>] - <span class="string">&#x27;a&#x27;</span> + <span class="number">9</span>;</span><br><span class="line">            <span class="keyword">else</span> a = line[<span class="number">0</span>] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (line[<span class="number">1</span>] &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; line[<span class="number">1</span>] &lt;= <span class="string">&#x27;f&#x27;</span>) b = line[<span class="number">0</span>] - <span class="string">&#x27;a&#x27;</span> + <span class="number">9</span>;</span><br><span class="line">            <span class="keyword">else</span> b = line[<span class="number">1</span>] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            a &amp;= <span class="number">0b00001111</span>;</span><br><span class="line">            b &amp;= <span class="number">0b00001111</span>;</span><br><span class="line">            a = a &lt;&lt; <span class="number">4</span>;</span><br><span class="line">            cipher[i][j] = a ^ b;</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后就是最核心的cache_line_cnt的计算：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//calculate the cache_line_cnt</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_cnt</span><span class="params">(<span class="keyword">uint8_t</span> kj, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cache_line_cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) holder[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; blockNum; i++) &#123;</span><br><span class="line">            <span class="keyword">uint8_t</span> index = (Td4[cipher[i][j] ^ kj] &gt;&gt; <span class="number">4</span>) &amp; <span class="number">0b00001111</span>;</span><br><span class="line">           ++holder[index];</span><br><span class="line">            <span class="comment">// printf("%u %u %u\n", b, a,cipher[i][j]);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(holder[i]) </span><br><span class="line">            ++cache_line_cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cache_line_cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//calculate the cache_line_cnt</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_cnt</span><span class="params">(<span class="keyword">uint8_t</span> kj, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cache_line_cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) holder[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; blockNum; i++) &#123;</span><br><span class="line">            <span class="keyword">uint8_t</span> index = (Td4[cipher[i][j] ^ kj] &gt;&gt; <span class="number">4</span>) &amp; <span class="number">0b00001111</span>;</span><br><span class="line">           ++holder[index];</span><br><span class="line">            <span class="comment">// printf(&quot;%u %u %u\n&quot;, b, a,cipher[i][j]);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(holder[i]) </span><br><span class="line">            ++cache_line_cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cache_line_cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这里的Td4就是AES加密中的T4表。关于T4表，这篇<a href="https://zhuanlan.zhihu.com/p/42264499" target="_blank" rel="noopener">知乎文章</a>写的很清楚，这里不再多解释了。</p>
+<p>这里的Td4就是AES加密中的T4表。关于T4表，这篇<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42264499">知乎文章</a>写的很清楚，这里不再多解释了。</p>
 <p>在外层用多重循环去调用就能得到所需要的值。</p>
 <p>然后再与对应时间做皮尔逊系数的计算就能得到所猜字节与对应密钥字节的相关性，这里我们使用的是python对应的库传入参数进行计算。</p>
 <p>原论文中的攻击使用100万个样本（时间+密文），论文给出的样本数量与成功率的关系如下图。</p>
@@ -209,7 +221,7 @@
 
 
 
-    <a data-url="http://sduzhang.cn/2019/08/05/cachelinecnt-timing-attack/" data-id="ck7099ylp00084kigxrph2k5k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://sduzhang.cn/2019/08/05/cachelinecnt-timing-attack/" data-id="cks2vnty4000378vjgmpo0rxy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -282,10 +294,10 @@
         "headline": "一种对GPU上AES加密的时序攻击",
         "image": "http://sduzhang.cn/images/cachelinecnt_motivation.png",
         "keywords": "",
-        "genre": "论文学习",
+        "genre": "归档",
         "datePublished": "2019-08-05",
         "dateCreated": "2019-08-05",
-        "dateModified": "2019-11-08",
+        "dateModified": "2021-08-08",
         "url": "http://sduzhang.cn/2019/08/05/cachelinecnt-timing-attack/",
         "description": "最近几天读了论文  A Complete Key Recovery Timing Attack on a GPU(2016 HPCA)，然后打算和学长一起复现一下这篇论文提出的攻击方法。
 论文源地址
@@ -294,7 +306,7 @@
 
 
 攻击过程如下：（1）获得设备加密的大量的A"
-        "wordCount": 566
+        "wordCount": 562
     }
 </script>
 
@@ -304,7 +316,7 @@
     
         
     <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 
     
@@ -342,11 +354,11 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/09/04/常用网站/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/11/08/%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88%E4%BF%AE%E6%94%B9%E9%94%99%E8%AF%AF/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            常用网站
+            c++对象指针修改错误
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -387,45 +399,45 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/12/03/ubuntu修改登录壁纸/" class="title">ubuntu修改登录界面壁纸</a></p>
-                            <p class="item-date"><time datetime="2019-12-03T04:02:52.000Z" itemprop="datePublished">2019-12-03</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/08/08/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92/" class="title">个人计划</a></p>
+                            <p class="item-date"><time datetime="2021-08-08T07:02:11.000Z" itemprop="datePublished">2021-08-08</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/11/08/对象指针修改错误/" class="title">c++对象指针修改错误</a></p>
-                            <p class="item-date"><time datetime="2019-11-08T13:36:40.000Z" itemprop="datePublished">2019-11-08</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/08/08/%E5%86%99%E5%9C%A8%E6%9C%80%E5%BC%80%E5%A7%8B/" class="title">写在最开始</a></p>
+                            <p class="item-date"><time datetime="2021-08-08T06:47:35.000Z" itemprop="datePublished">2021-08-08</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/09/04/常用网站/" class="title">常用网站</a></p>
-                            <p class="item-date"><time datetime="2019-09-04T14:41:10.000Z" itemprop="datePublished">2019-09-04</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/02/28/%E6%97%A5%E8%AE%B0%202021-02-28/" class="title">日记 2021-02-28</a></p>
+                            <p class="item-date"><time datetime="2021-02-28T13:05:22.000Z" itemprop="datePublished">2021-02-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/论文学习/">论文学习</a></p>
-                            <p class="item-title"><a href="/2019/08/05/cachelinecnt-timing-attack/" class="title">一种对GPU上AES加密的时序攻击</a></p>
-                            <p class="item-date"><time datetime="2019-08-05T10:57:47.000Z" itemprop="datePublished">2019-08-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2021/02/13/%E6%97%A5%E8%AE%B0%202021-02-13/" class="title">日记 2021-02-13</a></p>
+                            <p class="item-date"><time datetime="2021-02-13T06:51:35.000Z" itemprop="datePublished">2021-02-13</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/工具包/">工具包</a></p>
-                            <p class="item-title"><a href="/2019/07/27/Error-Permission-denied-publickey/" class="title">Error: Permission denied (publickey)</a></p>
-                            <p class="item-date"><time datetime="2019-07-27T03:08:21.000Z" itemprop="datePublished">2019-07-27</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
+                            <p class="item-title"><a href="/2020/04/27/%E9%A3%9E%E5%90%91%E6%9C%AD%E5%B9%8C%E7%9A%84%E7%8F%AD%E6%9C%BA/" class="title">飞向札幌的班机</a></p>
+                            <p class="item-date"><time datetime="2020-04-27T10:32:11.000Z" itemprop="datePublished">2020-04-27</time></p>
                         </div>
                     </li>
                 
@@ -438,7 +450,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具包/">工具包</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文学习/">论文学习</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%92%E6%A1%A3/">归档</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -448,7 +460,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -467,11 +479,11 @@
             <ul>
                 
                     <li>
-                        <a href="http://47.100.170.79:8199/dd_blog/">佟老师的博客</a>
+                        <a target="_blank" rel="noopener" href="http://47.100.170.79:8199/dd_blog/">佟老师的博客</a>
                     </li>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
                     </li>
                 
             </ul>
@@ -495,7 +507,7 @@
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2020 Zyh</p>
+                <p>&copy; 2021 Zyh</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
             <div class="footer-plugins">
@@ -529,25 +541,47 @@
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
     
     
 
 
 
 <!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
+
 
     </div>
 </body>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sduzhang.cn/"/>
-  <updated>2021-09-27T14:26:09.421Z</updated>
+  <updated>2021-08-23T14:51:50.365Z</updated>
   <id>http://sduzhang.cn/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>个人计划</title>
-    <link href="http://sduzhang.cn/2021/08/08/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92/"/>
-    <id>http://sduzhang.cn/2021/08/08/个人计划/</id>
-    <published>2021-08-08T07:02:11.000Z</published>
-    <updated>2021-09-27T14:26:09.421Z</updated>
-    
-    <content type="html"><![CDATA[<p>如果没有一个清晰的规划，那么未来的发展就会是不确定的，我永远也实现不了自己想做的事。因此通过记录TODO事项的方式，规划并记录自己的成长，帮助自己坚持努力，成为自己想成为的人。</p><table><thead><tr><th>事项</th><th>类型</th><th>优先级</th><th>描述</th><th>目标</th><th>关键节点划分</th><th>预计达成时间</th><th>状态</th><th>备注</th></tr></thead><tbody><tr><td>mysql学习</td><td>工作</td><td>P0</td><td>mysql对账务来说是不可替代的组件，如果想要提高自己的业务能力，必须系统且深入地学习</td><td>系统学习mysql，同时搞清工作中遇到的DB层面的问题</td><td>系统学习与零散学习共同进行。在系统学习之中做好笔记，并将应到实际业务场景中。</td><td>2021-08-31</td><td>DOING</td><td></td></tr><tr><td>《支付清算理论与实务》</td><td>工作</td><td>P0</td><td>业务需求，必须尽快学习。</td><td>搞清支付链路，做好读书笔记</td><td></td><td>2021-08-28</td><td>TODO</td><td></td></tr><tr><td>刻意练习</td><td>工作</td><td>P0</td><td>无论是个人成长还是兴趣爱好的发展，都需要刻意练习的方法。</td><td>读完书，做好读书笔记</td><td></td><td>2021-08-21</td><td>DOING</td><td></td></tr><tr><td>kafka学习</td><td>工作</td><td>P0</td><td></td><td></td><td></td><td>2021-09-30</td><td>TODO</td><td>Mysql学习完成后开始</td></tr><tr><td>美团四大名著</td><td>工作</td><td>P1</td><td>学习工作中所必须的能力。</td><td>边学习边应用到实际工作中，做好读书笔记</td><td></td><td>2021-09-30</td><td>TODO</td><td>9月1号前要开始</td></tr><tr><td>Unity</td><td>兴趣爱好</td><td>P2</td><td></td><td>做出自己想要的游戏</td><td>1. 做一个DEMO 2.做一个游戏   3.做自己想做的游戏</td><td>长期每天进行</td><td>DOING</td><td>Kafka学习完成后开始</td></tr><tr><td>吉他</td><td>兴趣爱好</td><td>P2</td><td></td><td>能弹唱自己想唱的歌曲</td><td>1.能弹唱歌曲    2.能弹唱自己想唱的歌曲</td><td>长期每天进行</td><td>DOING</td><td></td></tr><tr><td>健身环</td><td>兴趣爱好</td><td>P2</td><td></td><td>瘦到65kg</td><td>1.瘦到70kg       2.瘦到65kg</td><td>长期每天进行</td><td>DOING</td><td></td></tr><tr><td>游泳</td><td>兴趣爱好</td><td>P1</td><td>必须的能力</td><td>能自由地游泳</td><td>1.会游泳            2.会自由泳</td><td>2021-08-31</td><td>TODO</td><td></td></tr><tr><td>Mafka学习</td><td>工作</td><td>P1</td><td>必须深入学习的组件</td><td>系统学习，形成笔记</td><td></td><td>2021-09-30</td><td>TODO</td><td>在八月工作学习计划完成后启动</td></tr><tr><td>读书</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>九月份前拟定计划并开始，作为日常TODO项</td></tr><tr><td>写作</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>十月份前拟定计划并开始，作为日常TODO项</td></tr></tbody></table><p>加油，努力</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;如果没有一个清晰的规划，那么未来的发展就会是不确定的，我永远也实现不了自己想做的事。因此通过记录TODO事项的方式，规划并记录自己的成长，帮助自己坚持努力，成为自己想成为的人。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;事项&lt;/th&gt;
-&lt;th&gt;类型&lt;/th&gt;
-      
-    
-    </summary>
-    
-      <category term="TODO" scheme="http://sduzhang.cn/categories/TODO/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>写在最开始</title>
